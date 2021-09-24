@@ -1,0 +1,22 @@
+.boton {
+    -fx-background-color:  ghostwhite;
+    -fx-background-radius: 25;
+}
+
+.boton:hover {
+    -fx-background-color: coral;
+    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.1;
+}
+
+.cerrar {
+    -fx-background-color: #AD2427;
+    -fx-background-radius: 25;
+}
+
+.cerrar:hover {
+    -fx-background-color: #FF0005;
+    -fx-scale-y: 1.1;
+    -fx-scale-x: 1.1;
+}
+

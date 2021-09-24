@@ -1,0 +1,10 @@
+.mainPane {
+    -fx-background-color: linear-gradient(to bottom right, #FFDEE9, #B5FFFC);
+    -fx-background-radius: 25;
+}
+.miniPanel {
+    -fx-background-color: #00000025;
+    -fx-background-radius: 25;
+    -fx-text-fill: #FFFFFF;
+
+}

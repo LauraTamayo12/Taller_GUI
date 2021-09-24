@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="540.0" prefWidth="1000.0" styleClass="mainPane" stylesheets="@archivo.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taller_gui.Controller">
+    <children>
+        <AnchorPane fx:id="Config" layoutX="23.0" layoutY="83.0" prefHeight="220.0" prefWidth="300.0" styleClass="miniPanel" stylesheets="@archivo.css">
+            <children>
+                <Label layoutX="22.0" layoutY="14.0" prefHeight="32.0" prefWidth="218.0" text="Numero de Jugadores">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <Label layoutX="25.0" layoutY="90.0" prefHeight="26.0" prefWidth="106.0" text="Nivel">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <ComboBox fx:id="N_Players" layoutX="23.0" layoutY="50.0" prefHeight="26.0" prefWidth="252.0" stylesheets="@box.css" />
+                <ComboBox fx:id="Levels" layoutX="23.0" layoutY="122.0" prefHeight="26.0" prefWidth="252.0" stylesheets="@box.css" />
+                <Button fx:id="startGame" layoutX="36.0" layoutY="169.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="218.0" styleClass="boton" stylesheets="@buttons.css" text="Iniciar Juego">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <Label layoutX="45.0" layoutY="59.0" prefHeight="36.0" prefWidth="199.0" text="Configuraciones">
+            <font>
+                <Font name="System Bold" size="23.0" />
+            </font>
+        </Label>
+      <AnchorPane fx:id="results" layoutX="350.0" layoutY="83.0" prefHeight="220.0" prefWidth="300.0" styleClass="miniPanel" stylesheets="@archivo.css">
+         <children>
+            <Label layoutX="25.0" layoutY="14.0" prefHeight="32.0" prefWidth="184.0" text="Jugador Turno">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="57.0" prefHeight="32.0" prefWidth="172.0" text="Posiciones avanzadas">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="97.0" prefHeight="32.0" prefWidth="172.0" text="Posiciones Restantes">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="142.0" prefHeight="32.0" prefWidth="184.0" text="Retornos">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label fx:id="player_turn" alignment="CENTER" layoutX="200.0" layoutY="14.0" prefHeight="32.0" prefWidth="92.0" text="--">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="advanced_positions" alignment="CENTER" layoutX="200.0" layoutY="57.0" prefHeight="32.0" prefWidth="92.0" text="--">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="remaining_positions" alignment="CENTER" layoutX="200.0" layoutY="97.0" prefHeight="32.0" prefWidth="92.0" text="--">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="returns" alignment="CENTER" layoutX="200.0" layoutY="142.0" prefHeight="32.0" prefWidth="92.0" text="--">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="371.0" layoutY="59.0" prefHeight="36.0" prefWidth="199.0" text="Resultados">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="parameter_config" layoutX="679.0" layoutY="85.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="300.0" styleClass="boton" stylesheets="@buttons.css" text="Parámetros de Configuración">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="new_game" layoutX="679.0" layoutY="146.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="300.0" style="-fx-background-color: ;" styleClass="boton" stylesheets="@buttons.css" text="Nuevo Juego">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="about_game" layoutX="679.0" layoutY="206.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="300.0" styleClass="boton" stylesheets="@buttons.css" text="Acerca del Juego">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <AnchorPane fx:id="Zone_Game" layoutX="23.0" layoutY="353.0" prefHeight="151.0" prefWidth="300.0" styleClass="miniPanel" stylesheets="@archivo.css">
+         <children>
+            <Label fx:id="random_play" alignment="CENTER" layoutX="167.0" layoutY="38.0" prefHeight="32.0" prefWidth="92.0" text="--">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="lanza_player" layoutX="41.0" layoutY="94.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="218.0" styleClass="boton" stylesheets="@buttons.css" text="Lanza Jugador #">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="110.0" fitWidth="92.0" layoutX="53.0" layoutY="-1.0" pickOnBounds="true" rotate="90.0">
+               <image>
+                  <Image url="@images/dados.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="45.0" layoutY="330.0" prefHeight="36.0" prefWidth="199.0" text="Zona de Juego">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="345.0" layoutY="14.0" prefHeight="40.0" prefWidth="252.0" text="JUEGO DE DADOS">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="Panel_pair" layoutX="350.0" layoutY="351.0" prefHeight="151.0" prefWidth="300.0" styleClass="miniPanel" stylesheets="@archivo.css">
+         <children>
+            <ImageView fx:id="imgPair" fitHeight="125.0" fitWidth="252.0" layoutX="30.0" layoutY="11.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@images/confetti-41.gif" />
+               </image>
+            </ImageView>
+            <Label fx:id="pairs" alignment="CENTER" layoutX="92.0" layoutY="48.0" prefHeight="51.0" prefWidth="117.0" text="--">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="371.0" layoutY="326.0" prefHeight="36.0" prefWidth="199.0" text="Pares">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="Panel_Winner" layoutX="679.0" layoutY="351.0" prefHeight="151.0" prefWidth="300.0" styleClass="miniPanel" stylesheets="@archivo.css">
+         <children>
+            <Label fx:id="wiiiin" alignment="CENTER" layoutX="64.0" layoutY="97.0" prefHeight="32.0" prefWidth="172.0" text="XXXX XXXX XXXX">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="premio" fitHeight="133.0" fitWidth="110.0" layoutX="95.0" layoutY="-17.0" pickOnBounds="true">
+               <image>
+                  <Image url="@images/premiooooo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="702.0" layoutY="327.0" prefHeight="36.0" prefWidth="199.0" text="Ganador">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="close" layoutX="949.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" styleClass="cerrar" stylesheets="@buttons.css" text="X" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

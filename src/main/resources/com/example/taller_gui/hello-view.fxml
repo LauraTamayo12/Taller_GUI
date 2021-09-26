@@ -24,7 +24,7 @@
                 </Label>
                 <ComboBox fx:id="N_Players" layoutX="23.0" layoutY="50.0" prefHeight="26.0" prefWidth="252.0" stylesheets="@box.css" />
                 <ComboBox fx:id="Levels" layoutX="23.0" layoutY="122.0" prefHeight="26.0" prefWidth="252.0" stylesheets="@box.css" />
-                <Button fx:id="startGame" layoutX="36.0" layoutY="169.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="218.0" styleClass="boton" stylesheets="@buttons.css" text="Iniciar Juego">
+                <Button fx:id="startGame" layoutX="36.0" layoutY="169.0" mnemonicParsing="false" onAction="#startTheGame" prefHeight="32.0" prefWidth="218.0" styleClass="boton" stylesheets="@buttons.css" text="Iniciar Juego">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -85,17 +85,17 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Label>
-      <Button fx:id="parameter_config" layoutX="679.0" layoutY="85.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="300.0" styleClass="boton" stylesheets="@buttons.css" text="Parámetros de Configuración">
+      <Button fx:id="parameter_config" layoutX="679.0" layoutY="85.0" mnemonicParsing="false" onAction="#configuration" prefHeight="32.0" prefWidth="300.0" styleClass="boton" stylesheets="@buttons.css" text="Parámetros de Configuración">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="new_game" layoutX="679.0" layoutY="146.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="300.0" style="-fx-background-color: ;" styleClass="boton" stylesheets="@buttons.css" text="Nuevo Juego">
+      <Button fx:id="new_game" layoutX="679.0" layoutY="146.0" mnemonicParsing="false" onAction="#newGames" prefHeight="32.0" prefWidth="300.0" styleClass="boton" stylesheets="@buttons.css" text="Nuevo Juego">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="about_game" layoutX="679.0" layoutY="206.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="300.0" styleClass="boton" stylesheets="@buttons.css" text="Acerca del Juego">
+      <Button fx:id="about_game" layoutX="679.0" layoutY="206.0" mnemonicParsing="false" onAction="#aboutGame" prefHeight="32.0" prefWidth="300.0" styleClass="boton" stylesheets="@buttons.css" text="Acerca del Juego">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

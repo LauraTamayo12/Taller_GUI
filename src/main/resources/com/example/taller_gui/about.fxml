@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="231.0" prefWidth="473.0" styleClass="mainPaneConfig" stylesheets="@panelCon.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.taller_gui.ControllerAbout">
+   <children>
+      <AnchorPane layoutX="47.0" layoutY="27.0" prefHeight="178.0" prefWidth="377.0" styleClass="miniPanelConfig" stylesheets="@panelCon.css">
+         <children>
+            <Label alignment="CENTER" layoutX="130.0" layoutY="8.0" prefHeight="25.0" prefWidth="140.0" text="INTEGRANTES">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="84.0" layoutY="48.0" prefHeight="25.0" prefWidth="231.0" text="Yasser Fernando Cristancho Diaz">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="80.0" layoutY="108.0" prefHeight="25.0" prefWidth="239.0" text="Laura Vanessa Tamayo Pérez ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="120.0" layoutY="136.0" prefHeight="25.0" prefWidth="159.0" text="Cod. 201912202">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="120.0" layoutY="74.0" prefHeight="25.0" prefWidth="159.0" text="Cod. 20192">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

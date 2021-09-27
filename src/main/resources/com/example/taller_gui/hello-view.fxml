@@ -24,7 +24,7 @@
                 </Label>
                 <ComboBox fx:id="N_Players" layoutX="23.0" layoutY="50.0" prefHeight="26.0" prefWidth="252.0" stylesheets="@box.css" />
                 <ComboBox fx:id="Levels" layoutX="23.0" layoutY="122.0" prefHeight="26.0" prefWidth="252.0" stylesheets="@box.css" />
-                <Button fx:id="startGame" layoutX="36.0" layoutY="169.0" mnemonicParsing="false" onAction="#startTheGame" prefHeight="32.0" prefWidth="218.0" styleClass="boton" stylesheets="@buttons.css" text="Iniciar Juego">
+                <Button fx:id="startGame" layoutX="36.0" layoutY="169.0" mnemonicParsing="false" onAction="#startGame" prefHeight="32.0" prefWidth="218.0" styleClass="boton" stylesheets="@buttons.css" text="Iniciar Juego">
                     <font>
                         <Font name="System Bold" size="15.0" />
                     </font>
@@ -36,7 +36,7 @@
                 <Font name="System Bold" size="23.0" />
             </font>
         </Label>
-      <AnchorPane fx:id="results" layoutX="350.0" layoutY="83.0" prefHeight="220.0" prefWidth="300.0" styleClass="miniPanel" stylesheets="@archivo.css">
+      <AnchorPane layoutX="350.0" layoutY="83.0" prefHeight="220.0" prefWidth="300.0" styleClass="miniPanel" stylesheets="@archivo.css">
          <children>
             <Label layoutX="25.0" layoutY="14.0" prefHeight="32.0" prefWidth="184.0" text="Jugador Turno">
                <font>
@@ -107,7 +107,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="lanza_player" layoutX="41.0" layoutY="94.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="218.0" styleClass="boton" stylesheets="@buttons.css" text="Lanza Jugador #">
+            <Button fx:id="lanza_player" layoutX="41.0" layoutY="94.0" mnemonicParsing="false" onAction="#lanza_player" prefHeight="32.0" prefWidth="218.0" styleClass="boton" stylesheets="@buttons.css" text="Lanza Jugador #">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>

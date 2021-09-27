@@ -4,14 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.Spinner;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import model.GameManagement;
+import model.Player;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -25,11 +25,13 @@ import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+
+    private GameManagement gMng;
+
     @FXML
     private Button close;
 
     public Controller() {
-
     }
 
     @FXML
@@ -46,16 +48,6 @@ public class Controller implements Initializable {
 
     @FXML
     private Button startGame;
-
-    @FXML
-    void startTheGame(ActionEvent event) {
-        this.lanza_player.setDisable(false);
-        this.new_game.setDisable(false);
-        this.startGame.setDisable(true);
-        this.parameter_config.setDisable(true);
-        this.N_Players.setDisable(true);
-        this.Levels.setDisable(true);
-    }
 
     // " Resultados---------
     @FXML
@@ -158,9 +150,11 @@ public class Controller implements Initializable {
     @FXML
     private ImageView premio;
 
+    private Player player;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        gMng = new GameManagement();
         comboBox();
         this.imgPair.setVisible(false);
         this.premio.setVisible(false);
@@ -172,6 +166,7 @@ public class Controller implements Initializable {
     }
 
     public void comboBox(){
+
         ArrayList<String> list = new ArrayList<>();
         Collections.addAll(list, "Básico", "Medio", "Alto");
         Levels.getItems().addAll(list);
@@ -181,5 +176,71 @@ public class Controller implements Initializable {
         Collections.addAll(listN, "2", "3", "4", "5");
         N_Players.getItems().addAll(listN);
         N_Players.getSelectionModel().select(0);
+    }
+
+    @FXML
+    void startGame(ActionEvent event) {
+
+        this.N_Players.setDisable(true);
+        this.Levels.setDisable(true);
+        this.startGame.setDisable(true);
+        this.new_game.setDisable(false);
+        this.about_game.setDisable(false);
+        this.lanza_player.setDisable(false);
+        this.imgPair.setDisable(false);
+        this.premio.setDisable(false);
+        this.parameter_config.setDisable(true);
+
+        gMng.nPlayers();
+        //gMng.getPlayers().forEach(pls -> System.out.println(pls));
+        this.player = gMng.intialPlayer();
+        results();
+        String idPlayer = "Lanza Jugador #" + this.player.getId();
+        this.lanza_player.setText(idPlayer);
+    }
+
+    @FXML
+    void lanza_player(ActionEvent event) {
+        gMng.rollDices();
+        String rollDices = gMng.getDiceOne().getEdge() + " + " + gMng.getDiceTwo().getEdge();
+        this.random_play.setText(rollDices);
+        pairs(rollDices);
+        gMng.addPoints(player);
+        winner();
+        results();
+
+        if ( gMng.pair() ) {
+            /*this.random_play.setText(rollDices);
+            pairs(rollDices);
+            this.player.contPairs();
+            gMng.addPoints(player);
+            results();*/
+        } else {
+            this.player = gMng.nextPlayer(this.player);
+            String idPlayer = "Lanza Jugador #" + this.player.getId();
+            this.lanza_player.setText(idPlayer);
+        }
+
+
+    }
+
+    private void pairs(String rollDices) {
+        if ( gMng.pair() )
+            this.pairs.setText( rollDices );
+        else
+            this.pairs.setText( "- -" );
+    }
+
+    private void results() {
+        this.player_turn.setText(this.player.getId());
+        this.advanced_positions.setText(String.valueOf(this.player.getAdvan()));
+        this.remaining_positions.setText(String.valueOf(this.player.getRes()));
+        this.returns.setText(String.valueOf(this.player.getReturns()));
+    }
+
+    private void winner() {
+        if ( gMng.finish( player.getAdvan() ) || gMng.pairThree( player) ){
+            this.wiiiin.setText("Jugador # " + player.getId() );
+        }
     }
 }

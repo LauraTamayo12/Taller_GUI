@@ -31,6 +31,13 @@ public class Player {
         this.advan = advan;
     }
 
+    public void returns(int level) {
+        //NO SE SI FALTE ALGO ACA
+        returns++;
+        setAdvan(0);
+        setRes(level);
+    }
+
     public void contPairs() {
         contP++;
         System.out.println("# pares: " + contP);

@@ -191,8 +191,10 @@ public class Controller implements Initializable {
         this.premio.setDisable(false);
         this.parameter_config.setDisable(true);
 
+        int level = Levels.getItems().indexOf( Levels.getValue() );//LO DE LOS NIVELES
+        gMng.chooseLevel(level);
         gMng.nPlayers();
-        //gMng.getPlayers().forEach(pls -> System.out.println(pls));
+
         this.player = gMng.intialPlayer();
         results();
         String idPlayer = "Lanza Jugador #" + this.player.getId();
@@ -208,6 +210,7 @@ public class Controller implements Initializable {
         gMng.addPoints(player);
         winner();
         results();
+        gMng.returns(player);// RETORNOS
 
         if ( gMng.pair() ) {
             /*this.random_play.setText(rollDices);
